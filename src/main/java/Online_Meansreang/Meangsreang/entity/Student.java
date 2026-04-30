@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "transection_db")
+@Table(name = "docker_students")
 public class Student {
 
     @Id
