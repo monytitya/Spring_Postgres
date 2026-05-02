@@ -1,9 +1,5 @@
 package Online_Meansreang.Meangsreang.repository;
 
-import Online_Meansreang.Meangsreang.entity.Student;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+public class StudentRepository {
 
-@Repository
-public interface StudentRepository extends JpaRepository<Student, Long> {
 }

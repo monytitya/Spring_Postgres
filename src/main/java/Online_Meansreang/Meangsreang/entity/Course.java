@@ -1,50 +1,25 @@
 package Online_Meansreang.Meangsreang.entity;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "docker_courses")
+@Table(name = "courses")
 public class Course {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Generated(strategy = GenerationType.INDENTTITY)
     private long id;
-    private String courseName;
-    private String instructor;
+    private String title;
+
+    @ManyToMany(mappedBy = "courses")
+    private Set<Student> students;
 
     public Course() {
     }
 
-    public Course(String courseName, String instructor) {
-        this.courseName = courseName;
-        this.instructor = instructor;
-    }
+    pubilc Course
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
-    public String getInstructor() {
-        return instructor;
-    }
-
-    public void setInstructor(String instructor) {
-        this.instructor = instructor;
-    }
 }
