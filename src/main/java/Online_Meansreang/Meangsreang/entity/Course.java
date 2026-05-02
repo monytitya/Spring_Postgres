@@ -1,25 +1,27 @@
 package Online_Meansreang.Meangsreang.entity;
 
-import jakarta.annotation.Generated;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "courses")
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
 public class Course {
+
     @Id
-    @Generated(strategy = GenerationType.INDENTTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String title;
 
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students;
-
-    public Course() {
-    }
-
-    pubilc Course
-
 }
