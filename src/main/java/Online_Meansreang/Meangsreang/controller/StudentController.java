@@ -1,15 +1,18 @@
 package Online_Meansreang.Meangsreang.controller;
 
-import org.springframework.web.bind.annotation.*;
+import java.util.Set;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import Online_Meansreang.Meangsreang.entity.Course;
 import Online_Meansreang.Meangsreang.entity.Student;
 import Online_Meansreang.Meangsreang.repository.StudentRepository;
 
-import java.util.Set;
-
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/api/students")
 public class StudentController {
 
     private final StudentRepository repo;
