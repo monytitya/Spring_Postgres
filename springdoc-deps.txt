@@ -1,0 +1,4 @@
+Online_Meansreang:Meangsreang:jar:0.0.1-SNAPSHOT
+\- org.springdoc:springdoc-openapi-starter-webmvc-ui:jar:2.8.6:compile
+   \- org.springdoc:springdoc-openapi-starter-webmvc-api:jar:2.8.6:compile
+      \- org.springdoc:springdoc-openapi-starter-common:jar:2.8.6:compile
