@@ -1,21 +1,15 @@
 package Online_Meansreang.Meangsreang.controller;
 
-import java.util.List;
-
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import Online_Meansreang.Meangsreang.entity.Student;
 import Online_Meansreang.Meangsreang.repository.StudentRepository;
 import Online_Meansreang.Meangsreang.service.StudentService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/students")
+@CrossOrigin(origins = "*")
 public class StudentController {
 
     private final StudentRepository repo;
@@ -37,6 +31,11 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
+    public Student getStudentById(@PathVariable Long id) {
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Student not found"));
+    }
+
+    @PutMapping("/{id}")
     public Student updateStudent(@PathVariable Long id, @RequestBody Student updateStudent) {
         return service.updateStudent(id, updateStudent);
     }
@@ -46,5 +45,4 @@ public class StudentController {
         repo.deleteById(id);
         return "Student is deleted successfully";
     }
-
 }
